@@ -1,0 +1,48 @@
+.content-wrapper {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.leaderboard-item-wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.card-item {
+  width: 50%;
+  align-self: center;
+}
+
+.user-name-div {
+  width: 100%;
+  text-align: left;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.answered-div {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.asked-div {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.answered-span {
+  margin-right: 150px;
+}
+
+:host ::ng-deep .ant-card-head {
+  background-color: rgb(209, 209, 209) !important;
+}

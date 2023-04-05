@@ -1,0 +1,44 @@
+<div class="poll-card-wrapper">
+  <nz-card class="question-card" [nzBordered]="true" [nzTitle]="cardTitle">
+    <div class="card-content">
+      <div class="card-avatar">
+        <nz-avatar [nzSize]="96" [nzSrc]="getAuthorAvatar()"></nz-avatar>
+      </div>
+      <div class="card-question">
+        <div class="would-you-rather-div">Would you rather</div>
+        <div class="radio-div">
+          <nz-radio-group
+            [(ngModel)]="authUserAnswer"
+            (ngModelChange)="saveUserAnswer($event)"
+          >
+            <label nz-radio nzValue="optionOne" [nzDisabled]="!canPoll">{{
+              question.optionOne.text
+            }}</label>
+            <label nz-radio nzValue="optionTwo" [nzDisabled]="!canPoll">{{
+              question.optionTwo.text
+            }}</label>
+          </nz-radio-group>
+        </div>
+        <div class="view-poll-btn-div">
+          <button
+            [title]="
+              canPoll && authUserAnswer == '' ? 'Please, poll an option.' : ''
+            "
+            class="view-poll-btn"
+            nz-button
+            nzType="primary"
+            nzSize="default"
+            [disabled]="canPoll && authUserAnswer == ''"
+            (click)="viewResult()"
+          >
+            View poll
+          </button>
+        </div>
+      </div>
+    </div>
+  </nz-card>
+</div>
+
+<ng-template #cardTitle>
+  <div class="card-title-div">Asked by: {{ getAuthorName() }}</div>
+</ng-template>

@@ -1,0 +1,95 @@
+.question-card {
+  width: 50%;
+}
+
+.would-you-rather-div {
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.card-avatar-div{
+  display: flex;
+}
+.card-avatar{
+  align-self: center;
+}
+.option-one-report-div{
+  text-align: center;
+}
+.option-two-report-div{
+  text-align: center;
+}
+.selectedOption{
+  border:1px solid rgb(15, 22, 215) !important;
+}
+.option-one-div{
+  margin-bottom: 10px;
+  border:1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  padding: 10px
+}
+
+.option-two-div{
+  margin-bottom: 10px;
+  border:1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  padding: 10px
+}
+.question-card-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.card-content {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.ant-card-head-title {
+  display: flex !important;
+}
+
+.view-poll-btn {
+  width: 100%;
+}
+
+.view-poll-btn-div {
+  margin-top: 10px;
+}
+
+.would-you-rather-div {
+  text-align: left;
+}
+
+.option-one-div {
+  text-align: left;
+}
+
+.option-two-div {
+  text-align: left;
+}
+
+.card-question {
+  width: 60%;
+}
+
+:host ::ng-deep .ant-card-head {
+  background-color: rgb(209, 209, 209) !important;
+}
+
+.card-title-div{
+  display: flex;
+}
+
+.radio-div{
+  text-align: left;
+}
+
+[nz-radio] {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+}

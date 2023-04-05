@@ -1,0 +1,47 @@
+<div class="new-question-wrapper">
+  <div class="card-wrapper">
+    <nz-card class="new-question-card" nzTitle="Create New Question">
+      <div class="content-wrapper">
+        <div class="complete-question">Complete the question</div>
+      </div>
+      <div class="WouldYouRather">Would You Rather ...</div>
+      <div class="form-div">
+        <form
+          nz-form
+          [formGroup]="validateForm"
+          class="question-form"
+          (ngSubmit)="submitForm()"
+        >
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input first option!">
+              <input
+                type="text"
+                nz-input
+                formControlName="optionOne"
+                placeholder="Option one"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-divider nzText="OR"></nz-divider>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input second option!">
+              <input
+                type="text"
+                nz-input
+                formControlName="optionTwo"
+                placeholder="Option Two"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <button
+            nz-button
+            class="submit-form-button submit-form-margin"
+            [nzType]="'primary'"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </nz-card>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="question-card-wrapper">
+  <nz-card class="question-card" [nzBordered]="true" [nzTitle]="cardTitle">
+    <div class="card-content">
+      <div class="card-avatar-div">
+        <nz-avatar class="card-avatar" [nzSize]="124" [nzSrc]="getAuthorAvatar()"></nz-avatar>
+      </div>
+      <div class="card-question">
+        <div class="would-you-rather-div">Result:</div>
+        <nz-ribbon
+          nzText="Your vote"
+          *ngIf="authUserAnswer === 'optionOne'; else optionOne"
+        >
+          <div
+            class="option-one-div"
+            [ngClass]="getSelectedOptionClass('optionOne')"
+          >
+            <div class="option-one-text-div">
+              Would you rather {{ question.optionOne.text }}
+            </div>
+            <div class="option-one-progress-div">
+              <nz-progress [nzPercent]="getOptionOnePercent()"></nz-progress>
+            </div>
+            <div class="option-one-report-div">
+              {{ question.optionOne.votes.length }} out of
+              {{ getNumberOfUsers() }}
+            </div>
+          </div>
+        </nz-ribbon>
+        <nz-ribbon
+          nzText="Your vote"
+          *ngIf="authUserAnswer === 'optionTwo'; else optionTwo"
+        >
+          <div
+            class="option-two-div"
+            [ngClass]="getSelectedOptionClass('optionTwo')"
+          >
+            <div class="option-two-text-div">
+              Would you rather {{ question.optionTwo.text }}
+            </div>
+            <div class="option-two-progress-div">
+              <nz-progress [nzPercent]="getOptionTwoPercent()"></nz-progress>
+            </div>
+            <div class="option-two-report-div">
+              {{ question.optionTwo.votes.length }} out of
+              {{ getNumberOfUsers() }}
+            </div>
+          </div>
+        </nz-ribbon>
+      </div>
+    </div>
+  </nz-card>
+</div>
+
+<ng-template #cardTitle>
+  <div class="card-title-div">Asked by: {{ getAuthorName() }}</div>
+</ng-template>
+
+<ng-template #optionOne>
+  <div class="option-one-div" [ngClass]="getSelectedOptionClass('optionOne')">
+    <div class="option-one-text-div">
+      Would you rather {{ question.optionOne.text }}
+    </div>
+    <div class="option-one-progress-div">
+      <nz-progress [nzPercent]="getOptionOnePercent()"></nz-progress>
+    </div>
+    <div class="option-one-report-div">
+      {{ question.optionOne.votes.length }} out of
+      {{ getNumberOfUsers() }}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #optionTwo>
+  <div class="option-two-div" [ngClass]="getSelectedOptionClass('optionTwo')">
+    <div class="option-two-text-div">
+      Would you rather {{ question.optionTwo.text }}
+    </div>
+    <div class="option-two-progress-div">
+      <nz-progress [nzPercent]="getOptionTwoPercent()"></nz-progress>
+    </div>
+    <div class="option-two-report-div">
+      {{ question.optionTwo.votes.length }} out of
+      {{ getNumberOfUsers() }}
+    </div>
+  </div>
+</ng-template>

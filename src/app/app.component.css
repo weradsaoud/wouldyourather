@@ -1,0 +1,71 @@
+.logo {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0px 64px 0px 0;
+  float: left;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 64px;
+  height: 64px;
+}
+
+[nz-menu] {
+  line-height: 64px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-content {
+  padding: 0 50px;
+  height: 90vh;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.inner-content {
+  margin-top: 10px;
+  background: #fff;
+  padding: 24px;
+  height: 100%;
+}
+
+.loggedin-user {
+  width: 120px;
+  height: 31px;
+  float: right;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.avatar-name {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.name-div{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 40px;
+  padding: 0px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
+.Logout-btn{
+  border-color: #c98e8e !important;
+  background: #ff8986 !important;
+}

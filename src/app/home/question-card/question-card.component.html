@@ -1,0 +1,33 @@
+<div class="question-card-wrapper">
+  <nz-card class="question-card" [nzBordered]="true" [nzTitle]="cardTitle">
+    <div class="card-content">
+      <div class="card-avatar">
+        <nz-avatar [nzSize]="96" [nzSrc]="getAuthorAvatar()"></nz-avatar>
+      </div>
+      <div class="card-question">
+        <div class="would-you-rather-div">Would you rather</div>
+        <div class="option-one-div">
+          {{ optionOne }}
+        </div>
+        <div class="option-two-div">
+          {{ optionTwo }}
+        </div>
+        <div class="view-poll-btn-div">
+          <button
+            class="view-poll-btn"
+            nz-button
+            nzType="primary"
+            nzSize="default"
+            (click)="viewPoll()"
+          >
+            View poll
+          </button>
+        </div>
+      </div>
+    </div>
+  </nz-card>
+</div>
+
+<ng-template #cardTitle>
+  <div class="card-title-div">{{ getAuthorName() }} Asks:</div>
+</ng-template>

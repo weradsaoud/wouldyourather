@@ -1,0 +1,45 @@
+:host ::ng-deep .ant-card-head {
+  background-color: rgb(209, 209, 209) !important;
+}
+
+:host ::ng-deep .ant-form-item-explain-error {
+  text-align: left !important;
+}
+
+
+.new-question-wrapper {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.card-wrapper {
+  width: 50%;
+  align-self: center;
+}
+
+.complete-question {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.WouldYouRather {
+  margin-bottom: 10px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.question-form {
+  width: 100%;
+}
+
+.submit-form-margin {
+  margin-bottom: 16px;
+}
+
+
+
+.submit-form-button {
+  width: 100%;
+}

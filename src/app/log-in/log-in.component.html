@@ -1,0 +1,54 @@
+<div class="login-wrapper">
+  <div class="login-div">
+    <nz-card nzHoverable style="width: 350px" [nzCover]="coverTemplate">
+      <nz-card-meta
+        nzTitle="Please login to continue"
+        [nzDescription]="loginTemplate"
+      ></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="Would You Rather" src="assets/cover.png" />
+    </ng-template>
+    <ng-template #loginTemplate>
+      <div class="login-template">
+        <div class="login-dropdown-div">
+          <button
+            class="login-dropdown"
+            nz-button
+            nz-dropdown
+            nzTrigger="click"
+            [nzDropdownMenu]="menu4"
+          >
+            <div class="login-dropdown-content">
+              <div class="login-dropdown-text">{{ selectedUserName }}</div>
+              <div class="login-dropdown-icon">
+                <span nz-icon nzType="down"></span>
+              </div>
+            </div>
+          </button>
+          <nz-dropdown-menu #menu4="nzDropdownMenu">
+            <ul nz-menu *ngFor="let user of users">
+              <li nz-menu-item (click)="selecteUserId(user.id)">
+                {{ user.name }}
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+        <div class="login-btn-div">
+          <button
+            class="login-btn"
+            nz-button
+            nzType="primary"
+            nzSize="default"
+            [disabled]="selectedUserId === ''"
+            (click)="logIn()"
+            [nzLoading]="loggingIn"
+          >
+            <span nz-icon nzType="login" nzTheme="outline"></span>
+            Login
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="leaderboard-item-wrapper">
+  <nz-card class="card-item">
+    <div class="content-wrapper">
+      <div class="card-avatar-div">
+        <nz-avatar class="card-avatar" [nzSize]="124" [nzSrc]="avatar"></nz-avatar>
+      </div>
+      <div class="details-div">
+        <div class="user-name-div">
+          {{ userName }}
+        </div>
+        <div class="answered-div">
+          <span class="answered-span">Answered Questions</span>
+          <span>{{ answeredQuestionsNumber }}</span>
+        </div>
+        <div class="asked-div">
+          <span class="answered-span">Asked Questions</span>
+          <span>{{ askedQuestionsNumber }}</span>
+        </div>
+      </div>
+      <div class="score-div">
+        <nz-card style="width: 100px" nzTitle="Score">
+          <p>{{ answeredQuestionsNumber + askedQuestionsNumber }}</p>
+        </nz-card>
+      </div>
+    </div>
+  </nz-card>
+</div>

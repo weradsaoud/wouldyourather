@@ -1,0 +1,10 @@
+<div class="leaderboard-wrapper">
+  <div class="leaderboard-div" *ngFor="let user of sortUsers()">
+    <app-leader-board-item
+      [userName]="user.name"
+      [answeredQuestionsNumber]="getAnswersNumber(user)"
+      [askedQuestionsNumber]="user.questions.length"
+      [avatar]="user.avatarURL"
+    ></app-leader-board-item>
+  </div>
+</div>

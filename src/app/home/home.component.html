@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+<div class="home-wrapper">
+  <div class="home-tabs-div">
+    <nz-tabset nzCentered class="tab">
+      <nz-tab
+        class="Answered-Questions-tab"
+        [nzTitle]="
+          'answered Questions - (' +
+          getAnsweredQuestions().length.toString() +
+          ')'
+        "
+      >
+        <div
+          class="answered-questions-div"
+          *ngFor="let q of getAnsweredQuestions()"
+        >
+          <app-question-card
+            [authorId]="q.author"
+            [optionOne]="q.optionOne.text"
+            [optionTwo]="q.optionTwo.text"
+            [questionId]="q.id"
+          ></app-question-card>
+        </div>
+      </nz-tab>
+      <nz-tab
+        class="Unanswered-Questions-tab"
+        [nzTitle]="
+          'Unanswered Questions - (' + getUnAnsweredQuestions().length + ')'
+        "
+      >
+        <div
+          class="answered-questions-div"
+          *ngFor="let q of getUnAnsweredQuestions()"
+        >
+          <app-question-card
+            [authorId]="q.author"
+            [optionOne]="q.optionOne.text"
+            [optionTwo]="q.optionTwo.text"
+            [questionId]="q.id"
+          ></app-question-card>
+        </div>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>
