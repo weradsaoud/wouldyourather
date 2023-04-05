@@ -3,16 +3,14 @@
   <div class="home-tabs-div">
     <nz-tabset nzCentered class="tab">
       <nz-tab
-        class="Answered-Questions-tab"
+        class="Unanswered-Questions-tab"
         [nzTitle]="
-          'answered Questions - (' +
-          getAnsweredQuestions().length.toString() +
-          ')'
+          'Unanswered Questions - (' + getUnAnsweredQuestions().length + ')'
         "
       >
         <div
           class="answered-questions-div"
-          *ngFor="let q of getAnsweredQuestions()"
+          *ngFor="let q of getUnAnsweredQuestions()"
         >
           <app-question-card
             [authorId]="q.author"
@@ -23,14 +21,16 @@
         </div>
       </nz-tab>
       <nz-tab
-        class="Unanswered-Questions-tab"
+        class="Answered-Questions-tab"
         [nzTitle]="
-          'Unanswered Questions - (' + getUnAnsweredQuestions().length + ')'
+          'answered Questions - (' +
+          getAnsweredQuestions().length.toString() +
+          ')'
         "
       >
         <div
           class="answered-questions-div"
-          *ngFor="let q of getUnAnsweredQuestions()"
+          *ngFor="let q of getAnsweredQuestions()"
         >
           <app-question-card
             [authorId]="q.author"
