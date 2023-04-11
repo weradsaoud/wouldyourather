@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IAppState } from 'src/models/IAppState';
 import { IUser } from 'src/models/IUser';
+import { Usersservice } from 'src/services/users.service';
 import { selectUsers } from 'src/store/usersStore/users.selectors';
 
 @Component({
@@ -9,14 +10,21 @@ import { selectUsers } from 'src/store/usersStore/users.selectors';
   templateUrl: './leader-board.component.html',
   styleUrls: ['./leader-board.component.css'],
 })
-export class LeaderBoardComponent {
+export class LeaderBoardComponent implements OnInit {
   users: IUser[];
 
-  constructor(private store: Store<IAppState>) {
-    this.store.select(selectUsers).subscribe((users) => {
-      let usersIds = Object.keys(users);
-      this.users = usersIds.map((userId) => users[userId]);
-    });
+  constructor(
+    //private store: Store<IAppState>
+    private usersService: Usersservice
+  ) {
+    // this.store.select(selectUsers).subscribe((users) => {
+    //   let usersIds = Object.keys(users);
+    //   this.users = usersIds.map((userId) => users[userId]);
+    // });
+  }
+  ngOnInit(): void {
+    let usersIds = Object.keys(this.usersService.users);
+    this.users = usersIds.map((userId) => this.usersService.users[userId]);
   }
 
   getAnswersNumber(user: IUser): number {

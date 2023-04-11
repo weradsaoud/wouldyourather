@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IAppState } from 'src/models/IAppState';
 import { IUser } from 'src/models/IUser';
+import { Usersservice } from 'src/services/users.service';
 import { selectUsers } from 'src/store/usersStore/users.selectors';
 
 @Component({
@@ -10,15 +11,22 @@ import { selectUsers } from 'src/store/usersStore/users.selectors';
   templateUrl: './question-card.component.html',
   styleUrls: ['./question-card.component.css'],
 })
-export class QuestionCardComponent {
+export class QuestionCardComponent implements OnInit {
   users: { [key: string]: IUser };
   @Input() authorId: string = '';
   @Input() optionOne: string = '';
   @Input() optionTwo: string = '';
   @Input() questionId: string = '';
 
-  constructor(private store: Store<IAppState>, private router: Router) {
-    this.store.select(selectUsers).subscribe((users) => (this.users = users));
+  constructor(
+    //private store: Store<IAppState>,
+    private usersService: Usersservice,
+    private router: Router
+  ) {
+    //this.store.select(selectUsers).subscribe((users) => (this.users = users));
+  }
+  ngOnInit(): void {
+    this.users = this.usersService.users;
   }
 
   getAuthorName(): string {
